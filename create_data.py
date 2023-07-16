@@ -4,8 +4,9 @@ import numpy as np
 import networkx as nx
 from utils import *
 from keras.preprocessing import text
-from keras.utils import pad_sequences
-# from keras.preprocessing.sequence import pad_sequences
+from keras.preprocessing.sequence import pad_sequences
+# from keras.utils import pad_sequences
+
 
 def smile_w2v_pad(smile, maxlen_,victor_size):
 
