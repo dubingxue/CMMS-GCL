@@ -59,7 +59,6 @@ def predicting(model, device, loader):
     with torch.no_grad():
         for data in loader:
             data = data.to(device)
-            # output,x_g,y_g= model(data)
             output, x_g, y_g = model(data, data.x, data.edge_index, data.batch, data.smi_em)
             total_preds = torch.cat((total_preds, output.cpu()), 0)
             total_labels = torch.cat((total_labels, data.y.cpu()), 0)
