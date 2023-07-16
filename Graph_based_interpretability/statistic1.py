@@ -176,7 +176,7 @@ def predict_and_calculate_shapley(model, device, loader, target_class=0):
             import re
             safe_smiles = re.sub(r'[\\/*?:"<>|]', '_', smiles)
 
-            img_path = os.path.join('img', f'{safe_smiles}.png')
+            img_path = os.path.join('img_1', f'{safe_smiles}.png')
             img.save(img_path)
 
     return total_labels, total_preds, total_shapley_values, high_shapley_bond_neighbour_info, high_shapley_bond_types
