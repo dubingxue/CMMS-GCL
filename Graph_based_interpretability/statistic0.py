@@ -148,7 +148,7 @@ def predict_and_calculate_shapley(model, device, loader, target_class=0):
 
     with torch.no_grad():
         for idx, data in enumerate(loader):
-            if idx >= 2:
+            if idx >= 202:
                 break
             data = data.to(device)
             output, x_g, y_g = model(data,data.x,data.edge_index,data.batch,data.smi_em)
@@ -172,7 +172,7 @@ def predict_and_calculate_shapley(model, device, loader, target_class=0):
             import re
             safe_smiles = re.sub(r'[\\/*?:"<>|]', '_', smiles)
 
-            img_path = os.path.join('img', f'{safe_smiles}.png')
+            img_path = os.path.join('img_0', f'{safe_smiles}.png')
             img.save(img_path)
 
     return total_labels, total_preds, total_shapley_values, high_shapley_bond_neighbour_info, high_shapley_bond_types
