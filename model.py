@@ -87,10 +87,6 @@ class CMMS_GCL(nn.Module):
 
     def forward(self, data,x,edge_index,batch,smi_em):
 
-        # x, edge_index, batch,smi_em  = data.x, data.edge_index, data.batch,data.smi_em
-        # x, edge_index,smi_em = data.x, data.edge_index, data.smi_em
-        # smi_em = data.smi_em
-
         # Sequence Encoder
         smi_em = smi_em.view(-1, 100, 100)
         smi_em, h = self.W_rnn(smi_em)
